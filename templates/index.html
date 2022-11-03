@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+</head>
+<title>2R Studios</title>
+
+<body>
+    <h1>Studio Bookings</h1>
+    {% for booking in bookings %}
+    <div>
+        <p>
+            Band Name: {{booking.booking_name}} <br> Location: {{booking.room_name}}: <br> Booked for: {{booking.date}}
+         
+        </p>
+    </div>
+    {% endfor %}
+
+
+<form action="/bookings" method="post">
+    <label for="Band Name">Band Name: </label>
+    <input type="text" name="Band Name" id="Band Name">
+    <label for="Location">Studio No.</label>
+    <select name="Location" id="Location">
+        <option value="Studio One">Studio One</option>
+        <option value="Studio Two">Studio Two</option>
+        <option value="Studio Three">Studio Three</option>
+    </select>
+
+    <label for="booking date">Booking Date: </label>
+
+    <input type="date" id="booking date" name="booking date"
+       value="2018-07-22"
+       min="2022-11-01" max="2022-11-30">
+
+    <label for="booking time">Booking Time: </label>
+    <input type="time" id="booking time" name="booking time"
+       min="09:00" max="18:00" required>
+
+    <label for="Num_Guests">Number of Guests: </label>
+    <input type="text" name="Num_Guests" id="Num_Guests">
+    
+    
+    
+
+    
+
+    <label for="description">Description: </label>
+    <textarea name="description" id="description" cols="30" rows="1"></textarea>
+    <input type= "submit" value="Add Booking">
+    
+</form>
+
+</body>
+
+</html>
